@@ -41,6 +41,7 @@ void loop() {
         Serial.print(aliyun+String(a)+ali);
         delay(400);
         // 
+        // 
         zhongjian = a;
       }
       else{
