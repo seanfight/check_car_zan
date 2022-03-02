@@ -40,6 +40,7 @@ void loop() {
       if((zhongjian-a)>1000){
         Serial.print(aliyun+String(a)+ali);
         delay(400);
+        // 
         zhongjian = a;
       }
       else{
