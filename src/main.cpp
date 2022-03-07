@@ -12,7 +12,7 @@ String ali = "},\"version\":\"1.0\"}";
 char data[4]={0X56,0X71,0X00,0X27}; //设置
 char dataa[4]={0X56,0X11,0X00,0X47}; //设置
 char dataaa[4]={0X56,0X35,0X00,0X63}; //
-int zhongjian;
+int zhongjian=0;
 
 void setup() {
   // put your setup code here, to run once:
@@ -37,17 +37,17 @@ void loop() {
       //这段代码实现从缓冲区读取数据，并将数据发送到计算机显示和软串口发送；
       soft_ware.read();
       int a = device_A_String.substring(7,12).toInt();
-      if((zhongjian-a)>1000){
-        Serial.print(aliyun+String(a)+ali);
-        delay(400);
-        // 
-        // 
-        zhongjian = a;
+      // 判断是否超过28米
+      if(a<28000){
+        if((zhongjian-a)>1000){
+          Serial.print(aliyun+String(a)+ali);
+          delay(300);
+        } 
       }
-      else{
-        zhongjian = a;
-      }
+      // 缓存数据
+      zhongjian = a;
       device_A_String="";
+
     }
   }
 }
