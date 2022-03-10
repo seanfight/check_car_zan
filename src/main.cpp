@@ -38,7 +38,7 @@ void loop() {
       soft_ware.read();
       int a = device_A_String.substring(7,12).toInt();
       // 判断是否超过28米
-      if(a<28000 and a>1000){
+      if(a<28000 and a>299){
         if((zhongjian-a)>1000){
           Serial.print(aliyun+String(a)+ali);
           delay(300);
