@@ -18,9 +18,16 @@ void setup() {
   // put your setup code here, to run once:
   soft_ware.begin(9600);
   Serial.begin(115200);
+  delay(8000);
+
   soft_ware.write(data,4);
+  delay(1000);
   soft_ware.write(dataa,4);
+  delay(1000);
+
   soft_ware.write(dataaa,4);
+  delay(1000);
+
   soft_ware.listen();
 }
 
